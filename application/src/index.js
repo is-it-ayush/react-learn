@@ -3,20 +3,27 @@ import ReactDom from "react-dom";
 import base from "./css/base.css";
 
 function Greeting() {
-  var i = 0;
   return (
     <div>
-      <h1 className="test">Hello World {i}</h1>
+      <h1 className="test">Hello World</h1>
       <ul>
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
         <li>Item 4</li>
-        <li onClick={(i += 1)}>
+        <li>
           <a href="#">This is an example link test. </a>
         </li>
       </ul>
       <div>
+        <SecondGreeting/>
+        <ThirdGreeting />
+
+        {/* This is a comment test. */}
+        {/**
+         * This is a multi-line comment test.
+         * The line below is a re-use of a component.
+         */}
         <SecondGreeting />
       </div>
     </div>
@@ -29,6 +36,10 @@ function SecondGreeting() {
       <h3>This is rendered via SecondGreeting().</h3>
     </div>
   );
+}
+
+function ThirdGreeting() {
+  return <h3>Did someone summon third Greeting.</h3>;
 }
 
 ReactDom.render(<Greeting />, document.getElementById("root"));
